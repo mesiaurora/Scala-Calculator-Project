@@ -1,0 +1,14 @@
+build
+logs
+target
+LICENSE
+NOTICE
+*.idea
+*.idea_modules
+*.iml
+.classpath
+.gradle
+.project
+.settings
+RUNNING_PID
+.mergify.yml
