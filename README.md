@@ -22,7 +22,8 @@ curl http://localhost:9000/calculus?query=1+2+3
 Where query is a string of a mathematical expression. 
 
 Supporters operators are: 
-* Addition + 
+* Addition %2B 
+    * Due to encoding, addition cannot be done with + and %2B has to be used
 * Subtraction - 
 * Multiply * 
 * Division / 

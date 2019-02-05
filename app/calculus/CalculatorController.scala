@@ -16,7 +16,7 @@ class CalculatorController @Inject() extends InjectedController {
     * @return JSON object containing result or an error
     */
   def calculus(query: String): Action[AnyContent] = Action {
-
+    println("PRINTING QUERY " + query)
     val calculator = new CalculatorModel
     val returnValue = calculator.parseAndCalculate(query)
 

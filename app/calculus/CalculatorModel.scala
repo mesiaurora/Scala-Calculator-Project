@@ -18,10 +18,10 @@ class CalculatorModel {
     * @return None if not valid calculation, Some if valid
     */
   def parseAndCalculate(calculation: String): Option[Double] = {
-
+    println("CALCULATION " + calculation)
     // Use shunting yard algorithm to transform string from infix notation to a list of strings in RPN
     val numbersAndOperators = shuntingYard(calculation)
-
+    println(numbersAndOperators)
     // Returns option rounded up
     Some(Math.round(numbersAndOperators.foldLeft(List[Double]())(evaluateCalculation).head * 100.00) / 100.00)
   }
@@ -53,8 +53,9 @@ class CalculatorModel {
     // Remove spaces
     val infixNotationStringWithoutSpace = infixNotationString.replaceAll("\\s", "")
     // Tokenise string
-    val infixNotationList= infixNotationStringWithoutSpace.split("(?<=[-+*/()])|(?=[-+*/()])").toList
-
+    val regex: String = "(?<=[-+*/])|(?=[-+*/])"
+    val infixNotationList= infixNotationStringWithoutSpace.split(regex).toList
+    println("INFIX NOTATION LIST" + infixNotationList)
     val prefixList = ListBuffer[String]()
     val operatorStack = ListBuffer[String]()
 

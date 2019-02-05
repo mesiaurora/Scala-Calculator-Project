@@ -10,6 +10,7 @@ class CalculatorModelSpec extends FlatSpec with Matchers {
     val calculatorModel = new CalculatorModel
     // Test simple calculations
     calculatorModel.parseAndCalculate("1 + 2").get should be (3.0)
+    calculatorModel.parseAndCalculate("1+2").get should be (3.0)
     // Test brackets
     calculatorModel.parseAndCalculate("8 - ( 2 + 4 )").get should be (2.0)
     // Test multiply
